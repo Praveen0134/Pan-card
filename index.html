@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pan card</title>
+</head>
+<body>
+    <style>
+        .fg
+        {
+            display:flex;
+            border: 1px solid black;
+            padding:20px 40px;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(145, 181, 247);
+        }
+        body
+        {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        input
+        {
+            margin: 10px;
+        }
+
+    </style>
+    
+    <div class="fg">
+    <h2>PAN CARD : </h2><input class="jj" placeholder="ABCDE1234F" name="jj"  >
+    <button onclick="hh()">Submit</button>
+
+</div>
+
+<script>
+
+
+function hh()
+{
+    let input=document.querySelector(".jj").value;
+    let count=0;
+    if(input.length==10)
+{
+
+
+    for(i=0;i<input.length;i++)
+{
+
+
+    if(i<5 || i==9)
+{
+
+    if(input[i] == input[i].toUpperCase() && input[i] !=0 && input[i] !=1 && input[i] !=2 && input[i] !=3 && input[i] !=4 && input[i] !=5 && input[i] !=6 && input[i] !=7 && input[i] !=8 && input[i] !=9)
+{
+    count++;
+}
+
+}
+
+    else if(i>4 && i<9)
+
+{
+    if(0<=input[i] && input[i]<=9)
+{
+    count++;
+}
+}
+
+}
+if(count==10)
+{
+    alert("submitted successfully");
+}
+else
+{
+    alert("invalid pan number"+count)
+}
+}
+else
+{
+    alert("only 10 characters");
+}
+}
+
+
+</script>
+</body>
+</html>
